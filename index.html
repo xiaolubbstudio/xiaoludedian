@@ -23,7 +23,7 @@
       .aside{order:1}
       .main{order:2}
     }
-    .aside{border-right:1px solid var(--border);padding:18px;height:640px;overflow:auto;position:relative;z-index:30} /* Eliya备注：侧栏整体层级提高，确保展开层在新增按钮之上 */
+    .aside{border-right:1px solid var(--border);padding:18px;height:640px;overflow:auto;position:relative;z-index:30;box-shadow: inset 0 -12px 18px -12px rgba(2,6,23,0.12)} /* Eliya备注：侧栏整体层级提高，确保展开层在新增按钮之上 */
     .main{padding:20px;position:relative;z-index:31}
     h1{font-size:22px;margin:0 0 6px}
     p.lead{margin:0 0 12px;color:var(--muted);font-size:13px}
@@ -176,13 +176,13 @@ html[data-theme="orange"]{ --price-card-border-default: var(--accent); }
       .cart-btn.show{display:flex}
     }
     /* 购物车抽屉/面板：仅用 transform/opacity 做过渡，避免回流 */
-    .cart-panel{position:fixed;right:80px;bottom:16px;width:min(1080px,90vw);max-height:88vh;background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 28px rgba(2,6,23,0.22);z-index:999;display:flex;flex-direction:column;opacity:0;transform:translateX(24px);pointer-events:none;transition:transform .22s ease-out, opacity .22s ease-out}
+    .cart-panel{position:fixed;right:80px;bottom:16px;width:min(1080px,90vw);max-height:88vh;background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:0 20px 40px rgba(2,6,23,0.28);z-index:999;display:flex;flex-direction:column;opacity:0;transform:translateX(24px);pointer-events:none;transition:transform .22s ease-out, opacity .22s ease-out}
     .cart-panel.open{opacity:1;transform:translateX(0);pointer-events:auto}
     .cart-panel__header{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid var(--border)}
     .cart-panel__header .title{font-weight:700}
     .cart-panel__header .close{border:none;background:transparent;font-size:20px;cursor:pointer;color:var(--muted)}
     .cart-panel__body{padding:10px 12px;overflow:auto;flex:1}
-.cart-item{display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px dashed var(--border);position:relative;min-height:64px}
+.cart-item{display:flex;align-items:flex-start;gap:10px;padding:12px 0 22px;border-bottom:1px dashed var(--border);position:relative;min-height:72px}
     .cart-item .thumb{width:44px;height:44px;border-radius:8px;background:#f1f5f9;border:1px solid var(--border)}
     .cart-item .info{flex:1}
     .cart-item .price{white-space:nowrap}
@@ -213,7 +213,7 @@ html[data-theme="orange"]{ --price-card-border-default: var(--accent); }
     /* 收款码保持原比例呈现，避免拉伸变形 */
     .cart-panel__footer .pay img{display:none}
     @media (max-width:768px){
-      .cart-panel{left:0;right:0;bottom:0;top:auto;width:100%;height:75vh;max-height:75vh;border-radius:12px 12px 0 0;transform:translateY(100%);opacity:0}
+      .cart-panel{left:0;right:0;bottom:0;top:auto;width:100%;height:75vh;max-height:75vh;border-radius:12px 12px 0 0;transform:translateY(100%);opacity:0;box-shadow:0 -12px 28px rgba(2,6,23,0.26)}
       .cart-panel.open{transform:translateY(0);opacity:1}
       /* 移动端：底部区域为“合计金额 + 已减金额” + 右侧“去支付”按钮 */
       .cart-panel__footer{flex-direction:row;align-items:center;justify-content:space-between}
@@ -241,7 +241,7 @@ body.cart-open #cartBtn, body.cart-open #backToTopBtn{display:none !important}
     .cart-in-detail .cart-item .thumb{width:44px;height:44px;border-radius:8px;background:#f1f5f9;border:1px solid var(--border)}
     .cart-in-detail .cart-item .info{flex:1}
     /* 覆盖：将购物车项价格固定到右上角，info 区域留出空间，避免与右下角操作区重叠 */
-    #cartPanel .cart-item .info, #cartInDetail .cart-item .info{padding-right:100px}
+    #cartPanel .cart-item .info, #cartInDetail .cart-item .info{padding-right:100px;padding-bottom:48px}
     #cartPanel .cart-item .price, #cartInDetail .cart-item .price{position:absolute;right:12px;top:8px;white-space:nowrap}
     .cart-in-detail .cart-item .price{white-space:nowrap}
     /* 桌面端左侧与购物车视图切换：仅淡入淡出（0.12s），不做位移；不使用 display: none，避免网格列抖动 */
@@ -449,7 +449,8 @@ html[data-theme="white"] { scrollbar-width: thin; scrollbar-color: var(--accent)
          初始隐藏整个页面内容，待页面主脚本执行完再显示。 */
       html:not(.admin-ready) body { visibility: hidden; pointer-events: none; }
     </style>
-  </head>
+    <script src="search-dict.js"></script>
+</head>
 <body>
   <h1 class="mobile-title">小鹿帮帮 <span class="promo-note">全店首单整单95折</span></h1>
   <style>
@@ -1026,14 +1027,16 @@ function renderCart(){
         // 简化：第二份开始折扣或越多越便宜，根据 it.qty 粗略计算
         const cfg = window.DISCOUNT_CONFIG || { more:{p2:0.08,p3:0.09,p4plus:0.10,cap:0.10}, second:{p:0.10,cap:0.10} };
         if(dis.type==='second'){
-          const p = Math.min(cfg.second.p||0, cfg.second.cap||1);
+          const cap = (dis && dis.override && dis.override.cap!=null) ? dis.override.cap : (cfg.second.cap || 1);
+          const p = Math.min(((dis && dis.override && dis.override.p!=null) ? dis.override.p : (cfg.second.p || 0)), cap);
           const unit = Number(it.unitPrice)||0;
           const q = Number(it.qty)||0;
           return acc + (q<=0 ? 0 : (unit*1 + unit*Math.max(0,q-1)*(1-p)));
         }else if(dis.type==='more'){
-          const p2 = Math.min(cfg.more.p2||0, cfg.more.cap||1);
-          const p3 = Math.min(cfg.more.p3||0, cfg.more.cap||1);
-          const p4 = Math.min(cfg.more.p4plus||0, cfg.more.cap||1);
+          const cap = (dis && dis.override && dis.override.cap!=null) ? dis.override.cap : (cfg.more.cap || 1);
+          const p2 = Math.min(((dis && dis.override && dis.override.p2!=null) ? dis.override.p2 : (cfg.more.p2 || 0)), cap);
+          const p3 = Math.min(((dis && dis.override && dis.override.p3!=null) ? dis.override.p3 : (cfg.more.p3 || 0)), cap);
+          const p4 = Math.min(((dis && dis.override && dis.override.p4plus!=null) ? dis.override.p4plus : (cfg.more.p4plus || 0)), cap);
           const unit = Number(it.unitPrice)||0;
           const q = Number(it.qty)||0;
           if(q<=0) return acc;
@@ -2146,6 +2149,8 @@ function renderList(filter='') {
   }catch(_){ /* ignore */ }
   gamesEl.innerHTML = '';
   const q = filter.trim().toLowerCase();
+  // 标记：移动端搜索渲染期间的自动展开仅触发一次
+  window.__MOBILE_SEARCH_AUTO_OPENED = false;
   // ==== 搜索增强：支持中文、拼音全拼、拼音首字母缩写，并支持对子集名称的匹配 ====
   // 工具：判断中文字符
   const isChineseChar = (ch)=>{
@@ -2155,28 +2160,17 @@ function renderList(filter='') {
   const isLetterQuery = /^[a-z]+$/;
   const letterOnly = isLetterQuery.test(q);
   // 常用字的拼音字典（不标声调，覆盖常见子集与项目）
-  const PINYIN_MAP = {
-    '托':'tuo','管':'guan','相':'xiang','关':'guan',
-    '探':'tan','索':'suo','任':'ren','务':'wu',
-    '活':'huo','动':'dong','角':'jiao','色':'se',
-    '采':'cai','集':'ji','套':'tao','餐':'can',
-    '超':'chao','值':'zhi','代':'dai','肝':'gan',
-    '项':'xiang','目':'mu','测':'ce','试':'shi',
-    '版':'ban','本':'ben','纪':'ji','行':'xing',
-    '日':'ri','常':'chang','体':'ti','力':'li',
-    '声':'sheng','望':'wang','深':'shen','渊':'yuan',
-    '养':'yang','成':'cheng','等':'deng','级':'ji',
-    '突':'tu','破':'po','材':'cai','料':'liao',
-    '天':'tian','赋':'fu','武':'wu','器':'qi',
-    '圣':'sheng','遗':'yi','物':'wu','强':'qiang','化':'hua',
-    // 常见词补充
-    '原':'yuan','神':'shen','周':'zhou','常':'chang','首':'shou','领':'ling',
-    '璃':'li','月':'yue','风':'feng','岩':'yan','雷':'lei','草':'cao','水':'shui','火':'huo','冰':'bing',
-    '元':'yuan','素':'su','委':'wei','普':'pu','精':'jing','愿':'yuan','航':'hang','行':'xing',
-    '试':'shi','炼':'lian','造':'zao','赠':'zeng','送':'song','质':'zhi','变':'bian','换':'huan',
-    '抽':'chou','卡':'ka','加':'jia','急':'ji','速':'su','勘':'kan','探':'tan','矿':'kuang','钓':'diao','鱼':'yu',
-    '螺':'luo','露':'lu','莹':'ying','海':'hai','大':'da','世':'shi','界':'jie','跑':'pao','图':'tu','修':'xiu','复':'fu'
-  };
+  const PINYIN_MAP = (function(){
+    // B方案：页面仅保留极少量兜底字符，其余全部在 search-dict.js 维护
+    const base = {
+      '日':'ri','常':'chang','周':'zhou','月':'yue',
+      '体':'ti','力':'li',
+      '委':'wei','托':'tuo','普':'pu','精':'jing',
+      '原':'yuan','神':'shen'
+    };
+    try{ Object.assign(base, (window.SEARCH_DICT && window.SEARCH_DICT.pinyinMap) || {}); }catch(_){}
+    return base;
+  })();
   // 改进：中文首字母回退算法（常用锚点法，更稳定地覆盖 a-z 的 23 个拼音声母）
   const INITIAL_ANCHORS = [
     {h:'吖', l:'a'}, {h:'八', l:'b'}, {h:'嚓', l:'c'}, {h:'咑', l:'d'}, {h:'妸', l:'e'}, {h:'发', l:'f'},
@@ -2190,26 +2184,51 @@ function renderList(filter='') {
     }
     return 'z';
   };
+  // 词级拼音字典（可在 search-dict.js 中扩充），用于对多字词进行精准转换
+  const PINYIN_WORDS = (function(){ const words = {}; try{ Object.assign(words, (window.SEARCH_DICT && window.SEARCH_DICT.pinyinWords) || {}); }catch(_){ /* ignore */ } return words; })();
+  const WORD_KEYS = Object.keys(PINYIN_WORDS).sort((a,b)=> b.length - a.length);
   const toPinyinFull = (str)=>{
-    let out = '';
-    for(const ch of str){
+    let out='';
+    for(let i=0;i<str.length;){
+      const ch = str[i];
       if(isChineseChar(ch)){
-        out += (PINYIN_MAP[ch] || '');
+        let matched=false;
+        for(let w=0; w<WORD_KEYS.length; w++){
+          const word = WORD_KEYS[w];
+          if(str.startsWith(word, i)){
+            out += (PINYIN_WORDS[word] || '');
+            i += word.length; matched=true; break;
+          }
+        }
+        if(matched) continue;
+        const p = PINYIN_MAP[ch]; out += p || ''; i++;
       }else{
-        out += ch;
+        // 保留英文与数字，其它符号跳过，统一为小写，便于包含匹配
+        if(/[a-zA-Z0-9]/.test(ch)) out += ch.toLowerCase();
+        i++;
       }
     }
     return out;
   };
   const toPinyinAbbr = (str)=>{
-    let out = '';
-    for(const ch of str){
+    let out='';
+    for(let i=0;i<str.length;){
+      const ch = str[i];
       if(isChineseChar(ch)){
-        const p = PINYIN_MAP[ch];
-        out += p ? p[0] : initialFromHanzi(ch);
+        let matched=false;
+        for(let w=0; w<WORD_KEYS.length; w++){
+          const word = WORD_KEYS[w];
+          if(str.startsWith(word, i)){
+            const p = PINYIN_WORDS[word] || '';
+            if(p) out += p[0];
+            i += word.length; matched=true; break;
+          }
+        }
+        if(matched) continue;
+        const p = PINYIN_MAP[ch]; out += p ? p[0] : initialFromHanzi(ch); i++;
       }else if(/[a-zA-Z]/.test(ch)){
-        out += ch.toLowerCase();
-      }
+        out += ch.toLowerCase(); i++;
+      }else{ i++; }
     }
     return out;
   };
@@ -2248,8 +2267,15 @@ function renderList(filter='') {
   };
   const matchesSvc = (g, s)=>{
     const subsetName = s.subset || '代肝项目';
+    // 基础匹配：服务标题、描述、游戏名、子集名
     const base = (s.title||'').toLowerCase().includes(q) || (s.desc||'').toLowerCase().includes(q) || (g.name||'').toLowerCase().includes(q) || (subsetName||'').toLowerCase().includes(q);
     if(base) return true;
+    // 新增：价格选项（代肝项目）匹配
+    const opts = Array.isArray(s.priceOptions) ? s.priceOptions : [];
+    for(const opt of opts){
+      const lbl = (opt && typeof opt.label !== 'undefined') ? (opt.label||'') : '';
+      if(lbl.toLowerCase().includes(q)) return true;
+    }
     if(letterOnly){
       const sp = getPinyinIndex(subsetName||'');
       if(sp.full.includes(q) || sp.abbr.includes(q)) return true;
@@ -2257,6 +2283,11 @@ function renderList(filter='') {
       if(tp.full.includes(q) || tp.abbr.includes(q)) return true;
       const gp = getPinyinIndex(g.name||'');
       if(gp.full.includes(q) || gp.abbr.includes(q)) return true;
+      // 价格选项拼音匹配
+      for(const opt of opts){
+        const pi = getPinyinIndex((opt && typeof opt.label !== 'undefined') ? (opt.label||'') : '');
+        if(pi.full.includes(q) || pi.abbr.includes(q)) return true;
+      }
     }
     return false;
   };
@@ -2309,6 +2340,8 @@ function renderList(filter='') {
         const sEl = document.createElement('div');
         sEl.className = 'service';
         sEl.innerHTML = `<div class="svc-title" style="font-weight:600">${svc.title}</div><div class="muted" style="margin-top:6px">${svc.desc}</div>`;
+        // 供移动端自动展开使用：保存数据引用
+        sEl.__svcData = svc; sEl.__gameData = game;
         sEl.addEventListener('click',()=>showService(svc,game,sEl));
         srvInner.appendChild(sEl);
       });
@@ -2350,6 +2383,8 @@ function renderList(filter='') {
         const sEl = document.createElement('div');
         sEl.className = 'service';
         sEl.innerHTML = `<div class="svc-title" style="font-weight:600">${svc.title}</div><div class="muted" style="margin-top:6px">${svc.desc}</div>`;
+        // 供移动端自动展开使用：保存数据引用
+        sEl.__svcData = svc; sEl.__gameData = game;
         sEl.addEventListener('click',()=>showService(svc,game,sEl));
         bodyInner.appendChild(sEl);
       });
@@ -2420,6 +2455,11 @@ function renderList(filter='') {
           }
         });
       }catch(e){}
+      // 移动端：首次搜索渲染自动展开第一个服务项的价格卡
+      if(!window.__MOBILE_SEARCH_AUTO_OPENED && window.matchMedia && window.matchMedia('(max-width: 768px)').matches){
+        const firstSvcEl = srvWrap.querySelector('.service');
+        if(firstSvcEl){ try{ showService(firstSvcEl.__svcData || {}, game, firstSvcEl); window.__MOBILE_SEARCH_AUTO_OPENED = true; }catch(_){} }
+      }
     }
 
     // 1) 切换展开/收起服务列表（点击卡片时，仅使用 transform/opacity 动画）
@@ -2791,9 +2831,10 @@ function updateTotal(){
   const cfg = window.DISCOUNT_CONFIG || { more:{p2:0.08,p3:0.09,p4plus:0.10,cap:0.10}, second:{p:0.10,cap:0.10} };
   if(dis && dis.enabled){
     if(dis.type === 'more'){
-      const p2 = Math.min(cfg.more.p2 || 0, cfg.more.cap || 1);
-      const p3 = Math.min(cfg.more.p3 || 0, cfg.more.cap || 1);
-      const p4 = Math.min(cfg.more.p4plus || 0, cfg.more.cap || 1);
+      const cap = (dis && dis.override && dis.override.cap!=null) ? dis.override.cap : (cfg.more.cap || 1);
+      const p2 = Math.min(((dis && dis.override && dis.override.p2!=null) ? dis.override.p2 : (cfg.more.p2 || 0)), cap);
+      const p3 = Math.min(((dis && dis.override && dis.override.p3!=null) ? dis.override.p3 : (cfg.more.p3 || 0)), cap);
+      const p4 = Math.min(((dis && dis.override && dis.override.p4plus!=null) ? dis.override.p4plus : (cfg.more.p4plus || 0)), cap);
       if(qSum <= 0){
         totalFloat = 0;
         discountAmount = 0;
@@ -2829,7 +2870,8 @@ function updateTotal(){
         discountAmount = Math.max(0, baseTotal - totalFloat);
       }
     } else if(dis.type === 'second'){
-      const p = Math.min(cfg.second.p || 0, cfg.second.cap || 1);
+      const cap = (dis && dis.override && dis.override.cap!=null) ? dis.override.cap : (cfg.second.cap || 1);
+      const p = Math.min(((dis && dis.override && dis.override.p!=null) ? dis.override.p : (cfg.second.p || 0)), cap);
       if(qSum <= 0){
         totalFloat = 0;
         discountAmount = 0;
