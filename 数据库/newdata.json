@@ -37,11 +37,11 @@
         {
           "id": "ss1760262914493-18202",
           "name": "探索类",
-          "remark": "探索度 全宝箱 神瞳",
+          "remark": "探索度 全宝箱",
           "announce": {
             "text": "[探索度需知]\n·55%-65%=9折\n·65%-75%=8折\n·75%-85%=7折\n·85%-95%=5折\n·95%以上=3折\n———————————————\n·全宝箱价格=原本价格+原本价格的20%\n·探索度≈90%宝箱+神瞳+传送点+地灵龛\n·探索度100%≠全宝箱\n·全宝箱≠探索度100%",
             "style": {
-              "color": "#ff6666",
+              "color": "#ec5151",
               "bgColor": "#fcfcfc",
               "fontSize": 16,
               "bold": true
@@ -49,9 +49,9 @@
           }
         },
         {
-          "id": "ss1760288775230-92870",
-          "name": "活动类",
-          "remark": "麻烦找一下客服小鹿",
+          "id": "ss1760361237456-76114",
+          "name": "角色类",
+          "remark": "突破材料 等级 天赋 武器",
           "announce": {
             "text": "",
             "style": {
@@ -63,9 +63,23 @@
           }
         },
         {
-          "id": "ss1760361237456-76114",
-          "name": "角色类",
-          "remark": "突破材料 等级 天赋 武器",
+          "id": "ss1760288775230-92870",
+          "name": "活动类",
+          "remark": "麻烦找一下客服小鹿",
+          "announce": {
+            "text": "期间含每日委托",
+            "style": {
+              "color": "#1f2937",
+              "bgColor": "#ffffff",
+              "fontSize": 14,
+              "bold": false
+            }
+          }
+        },
+        {
+          "id": "ss1760636590465-52059",
+          "name": "任务类",
+          "remark": "魔神 传说 世界 邀约 前置",
           "announce": {
             "text": "",
             "style": {
@@ -91,9 +105,9 @@
           }
         },
         {
-          "id": "ss1760636590465-52059",
-          "name": "任务类",
-          "remark": "魔神 传说 世界 邀约 前置",
+          "id": "ss1760642238013-22313",
+          "name": "世界树",
+          "remark": "",
           "announce": {
             "text": "",
             "style": {
@@ -105,9 +119,9 @@
           }
         },
         {
-          "id": "ss1760642238013-22313",
-          "name": "代肝项目",
-          "remark": "",
+          "id": "ss1760811842328-29280",
+          "name": "收集类",
+          "remark": "神瞳 摩拉箱 玉帛 食谱 兰那罗",
           "announce": {
             "text": "",
             "style": {
@@ -447,9 +461,9 @@
               "remark": "300含前置主线 已做可退"
             },
             {
-              "label": "渊下宫",
-              "price": 130,
-              "remark": "170含前置主线 已做可退"
+              "label": "悠悠度假村",
+              "price": 120,
+              "remark": "190含前置主线 已做可退"
             },
             {
               "label": "层岩巨渊",
@@ -462,8 +476,13 @@
               "remark": "160含前置主线 已做可退"
             },
             {
+              "label": "渊下宫",
+              "price": 130,
+              "remark": "170含前置主线 已做可退"
+            },
+            {
               "label": "全图100%包前置主线",
-              "price": 4580,
+              "price": 4770,
               "remark": "全图100%包前置主线 已做可退"
             }
           ],
@@ -484,17 +503,17 @@
         },
         {
           "id": "genshin-13",
-          "title": "版本活动全包",
-          "desc": "除了夏活",
+          "title": "全图全宝箱",
+          "desc": "全图全宝箱包前置主线",
           "priceOptions": [
             {
               "label": "次",
-              "price": 110,
-              "remark": ""
+              "price": 5600,
+              "remark": "有优惠"
             }
           ],
           "discount": {
-            "enabled": true,
+            "enabled": false,
             "type": "more"
           },
           "paymentMethods": [
@@ -505,17 +524,17 @@
             "type": "微信",
             "value": "shikacyayuzu"
           },
-          "subset": "活动类",
-          "subsetId": "ss1760288775230-92870"
+          "subset": "探索类",
+          "subsetId": "ss1760262914493-18202"
         },
         {
           "id": "genshin-14",
-          "title": "小活动",
-          "desc": "25~35r 麻烦找一下客服小鹿",
+          "title": "全图全收集满探全宝箱",
+          "desc": "摩拉盒 玉帛 食谱等等",
           "priceOptions": [
             {
               "label": "次",
-              "price": 25,
+              "price": 6000,
               "remark": ""
             }
           ],
@@ -531,141 +550,11 @@
             "type": "微信",
             "value": "shikacyayuzu"
           },
-          "subset": "活动类",
-          "subsetId": "ss1760288775230-92870"
+          "subset": "探索类",
+          "subsetId": "ss1760262914493-18202"
         },
         {
           "id": "genshin-15",
-          "title": "小活动",
-          "desc": "25~35r 麻烦找一下客服小鹿",
-          "priceOptions": [
-            {
-              "label": "次",
-              "price": 35,
-              "remark": ""
-            }
-          ],
-          "discount": {
-            "enabled": false,
-            "type": "more"
-          },
-          "paymentMethods": [
-            "微信",
-            "支付宝"
-          ],
-          "contact": {
-            "type": "微信",
-            "value": "shikacyayuzu"
-          },
-          "subset": "活动类",
-          "subsetId": "ss1760288775230-92870"
-        },
-        {
-          "id": "genshin-16",
-          "title": "大活动",
-          "desc": "70~90r 麻烦找一下客服小鹿",
-          "priceOptions": [
-            {
-              "label": "次",
-              "price": 70,
-              "remark": ""
-            }
-          ],
-          "discount": {
-            "enabled": false,
-            "type": "more"
-          },
-          "paymentMethods": [
-            "微信",
-            "支付宝"
-          ],
-          "contact": {
-            "type": "微信",
-            "value": "shikacyayuzu"
-          },
-          "subset": "活动类",
-          "subsetId": "ss1760288775230-92870"
-        },
-        {
-          "id": "genshin-17",
-          "title": "大活动",
-          "desc": "70~90r 麻烦找一下客服小鹿",
-          "priceOptions": [
-            {
-              "label": "次",
-              "price": 90,
-              "remark": ""
-            }
-          ],
-          "discount": {
-            "enabled": false,
-            "type": "more"
-          },
-          "paymentMethods": [
-            "微信",
-            "支付宝"
-          ],
-          "contact": {
-            "type": "微信",
-            "value": "shikacyayuzu"
-          },
-          "subset": "活动类",
-          "subsetId": "ss1760288775230-92870"
-        },
-        {
-          "id": "genshin-18",
-          "title": "深渊9-12",
-          "desc": "看号打不过退钱qwq",
-          "priceOptions": [
-            {
-              "label": "期",
-              "price": 30,
-              "remark": ""
-            }
-          ],
-          "discount": {
-            "enabled": false,
-            "type": "more"
-          },
-          "paymentMethods": [
-            "微信",
-            "支付宝"
-          ],
-          "contact": {
-            "type": "微信",
-            "value": "shikacyayuzu"
-          },
-          "subset": "活动类",
-          "subsetId": "ss1760288775230-92870"
-        },
-        {
-          "id": "genshin-19",
-          "title": "幽境危战 幻想真境剧诗",
-          "desc": "幽20-30r 幻30-50r 麻烦找一下客服小鹿",
-          "priceOptions": [
-            {
-              "label": "期",
-              "price": 0,
-              "remark": ""
-            }
-          ],
-          "discount": {
-            "enabled": false,
-            "type": "more"
-          },
-          "paymentMethods": [
-            "微信",
-            "支付宝"
-          ],
-          "contact": {
-            "type": "微信",
-            "value": "shikacyayuzu"
-          },
-          "subset": "活动类",
-          "subsetId": "ss1760288775230-92870"
-        },
-        {
-          "id": "genshin-20",
           "title": "角色升级0-90级",
           "desc": "指定角色练等级到90级 最晚7天内 加急一天内75r(要有足够树脂)",
           "priceOptions": [
@@ -691,7 +580,7 @@
           "subsetId": "ss1760361237456-76114"
         },
         {
-          "id": "genshin-21",
+          "id": "genshin-16",
           "title": "突破材料",
           "desc": "指定角色的boos突破材料",
           "priceOptions": [
@@ -717,7 +606,371 @@
           "subsetId": "ss1760361237456-76114"
         },
         {
+          "id": "genshin-17",
+          "title": "天赋",
+          "desc": "",
+          "priceOptions": [
+            {
+              "label": "单次",
+              "price": 0,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "角色类",
+          "subsetId": "ss1760361237456-76114"
+        },
+        {
+          "id": "genshin-18",
+          "title": "版本活动全包",
+          "desc": "除了夏活",
+          "priceOptions": [
+            {
+              "label": "次",
+              "price": 110,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": true,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "活动类",
+          "subsetId": "ss1760288775230-92870"
+        },
+        {
+          "id": "genshin-19",
+          "title": "小活动",
+          "desc": "25~35r 麻烦找一下客服小鹿",
+          "priceOptions": [
+            {
+              "label": "次",
+              "price": 25,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "活动类",
+          "subsetId": "ss1760288775230-92870"
+        },
+        {
+          "id": "genshin-20",
+          "title": "小活动",
+          "desc": "25~35r 麻烦找一下客服小鹿",
+          "priceOptions": [
+            {
+              "label": "次",
+              "price": 35,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "活动类",
+          "subsetId": "ss1760288775230-92870"
+        },
+        {
+          "id": "genshin-21",
+          "title": "大活动",
+          "desc": "70~90r 麻烦找一下客服小鹿",
+          "priceOptions": [
+            {
+              "label": "次",
+              "price": 70,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "活动类",
+          "subsetId": "ss1760288775230-92870"
+        },
+        {
           "id": "genshin-22",
+          "title": "大活动",
+          "desc": "70~90r 麻烦找一下客服小鹿",
+          "priceOptions": [
+            {
+              "label": "次",
+              "price": 90,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "活动类",
+          "subsetId": "ss1760288775230-92870"
+        },
+        {
+          "id": "genshin-23",
+          "title": "深渊9-12",
+          "desc": "看号打不过退钱qwq",
+          "priceOptions": [
+            {
+              "label": "期",
+              "price": 30,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "活动类",
+          "subsetId": "ss1760288775230-92870"
+        },
+        {
+          "id": "genshin-24",
+          "title": "幽境危战 幻想真境剧诗",
+          "desc": "幽20-30r 幻30-50r 麻烦找一下客服小鹿",
+          "priceOptions": [
+            {
+              "label": "期",
+              "price": 0,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "活动类",
+          "subsetId": "ss1760288775230-92870"
+        },
+        {
+          "id": "genshin-25",
+          "title": "魔神任务",
+          "desc": "30-60r一幕 需要找一下客服小鹿",
+          "priceOptions": [
+            {
+              "label": "幕",
+              "price": 45,
+              "remark": "蒙德30/幕 璃月30-35/幕 稻妻30-40/幕 须弥45-60/幕 枫丹35-60/幕 纳塔40-55/幕"
+            }
+          ],
+          "discount": {
+            "enabled": true,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "任务类",
+          "subsetId": "ss1760636590465-52059"
+        },
+        {
+          "id": "genshin-26",
+          "title": "传说任务",
+          "desc": "35-45r一章 需要找一下客服小鹿",
+          "priceOptions": [
+            {
+              "label": "章",
+              "price": 40,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": true,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "任务类",
+          "subsetId": "ss1760636590465-52059"
+        },
+        {
+          "id": "genshin-27",
+          "title": "邀约任务",
+          "desc": "角色邀约",
+          "priceOptions": [
+            {
+              "label": "个",
+              "price": 25,
+              "remark": "诺艾尔45两幕"
+            }
+          ],
+          "discount": {
+            "enabled": true,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "任务类",
+          "subsetId": "ss1760636590465-52059"
+        },
+        {
+          "id": "genshin-28",
+          "title": "森林书",
+          "desc": "220r包后续全打勾",
+          "priceOptions": [
+            {
+              "label": "次",
+              "price": 170,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "任务类",
+          "subsetId": "ss1760636590465-52059"
+        },
+        {
+          "id": "genshin-29",
+          "title": "沙漠书",
+          "desc": "",
+          "priceOptions": [
+            {
+              "label": "单次",
+              "price": 0,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "任务类",
+          "subsetId": "ss1760636590465-52059"
+        },
+        {
+          "id": "genshin-30",
+          "title": "部族任务",
+          "desc": "纳塔部族纪闻 声望需要",
+          "priceOptions": [
+            {
+              "label": "个",
+              "price": 45,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": true,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "任务类",
+          "subsetId": "ss1760636590465-52059"
+        },
+        {
+          "id": "genshin-31",
           "title": "地区特产",
           "desc": "给角色突破的地方特产",
           "priceOptions": [
@@ -741,6 +994,207 @@
           },
           "subset": "采集类",
           "subsetId": "ss1760361700842-81317"
+        },
+        {
+          "id": "genshin-32",
+          "title": "怪物掉落",
+          "desc": "",
+          "priceOptions": [
+            {
+              "label": "单次",
+              "price": 0,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "采集类",
+          "subsetId": "ss1760361700842-81317"
+        },
+        {
+          "id": "genshin-33",
+          "title": "忍冬树",
+          "desc": "每级需要10个玉髓",
+          "priceOptions": [
+            {
+              "label": "1-8级",
+              "price": 60,
+              "remark": ""
+            },
+            {
+              "label": "9-12级",
+              "price": 40,
+              "remark": "一周只能获得10个(1级)"
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "世界树",
+          "subsetId": "ss1760642238013-22313"
+        },
+        {
+          "id": "genshin-34",
+          "title": "神樱树",
+          "desc": "每级需要25个雷之印",
+          "priceOptions": [
+            {
+              "label": "1-20级---9r/级",
+              "price": 180,
+              "remark": ""
+            },
+            {
+              "label": "21-40级---10r/级",
+              "price": 200,
+              "remark": ""
+            },
+            {
+              "label": "41-50级---12r/级",
+              "price": 120,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "世界树",
+          "subsetId": "ss1760642238013-22313"
+        },
+        {
+          "id": "genshin-35",
+          "title": "梦之树",
+          "desc": "每级需要35个草之印",
+          "priceOptions": [
+            {
+              "label": "1-20级---20r/级",
+              "price": 200,
+              "remark": ""
+            },
+            {
+              "label": "21-40级---22r/级",
+              "price": 440,
+              "remark": ""
+            },
+            {
+              "label": "41-50级---24r/级",
+              "price": 240,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "世界树",
+          "subsetId": "ss1760642238013-22313"
+        },
+        {
+          "id": "genshin-36",
+          "title": "露景泉",
+          "desc": "每级需要30个水之印",
+          "priceOptions": [
+            {
+              "label": "1-20级---11r/级",
+              "price": 220,
+              "remark": ""
+            },
+            {
+              "label": "21-40级---12r/级",
+              "price": 240,
+              "remark": ""
+            },
+            {
+              "label": "41-50级---18r/级",
+              "price": 180,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "世界树",
+          "subsetId": "ss1760642238013-22313"
+        },
+        {
+          "id": "genshin-37",
+          "title": "煅石之轮",
+          "desc": "每级需要30个火之印",
+          "priceOptions": [
+            {
+              "label": "1-20级---11r/级",
+              "price": 220,
+              "remark": ""
+            },
+            {
+              "label": "21-40级---12r/级",
+              "price": 240,
+              "remark": ""
+            },
+            {
+              "label": "41-50级---16r/级",
+              "price": 160,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "世界树",
+          "subsetId": "ss1760642238013-22313"
         }
       ]
     },
@@ -1095,7 +1549,7 @@
       "services": []
     }
   ],
-  "theme": "white",
+  "theme": "lime",
   "discountConfig": {
     "more": {
       "p2": 0.08,
