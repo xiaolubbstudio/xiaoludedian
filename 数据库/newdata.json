@@ -1409,27 +1409,27 @@
           "priceOptions": [
             {
               "label": "黑铁→青铜",
-              "price": 175,
+              "price": 112,
               "remark": ""
             },
             {
               "label": "青铜→白银",
-              "price": 175,
+              "price": 140,
               "remark": ""
             },
             {
               "label": "白银→黄金",
-              "price": 280,
+              "price": 175,
               "remark": ""
             },
             {
               "label": "黄金→铂金",
-              "price": 300,
+              "price": 220,
               "remark": "开始困难了qwq"
             },
             {
               "label": "铂金→钻石",
-              "price": 350,
+              "price": 310,
               "remark": "打不动了"
             }
           ],
@@ -1454,27 +1454,27 @@
           "priceOptions": [
             {
               "label": "黑铁→青铜",
-              "price": 30,
+              "price": 37,
               "remark": ""
             },
             {
               "label": "青铜→白银",
-              "price": 30,
+              "price": 46,
               "remark": ""
             },
             {
               "label": "白银→黄金",
-              "price": 48,
+              "price": 58,
               "remark": ""
             },
             {
               "label": "黄金→铂金",
-              "price": 52,
+              "price": 73,
               "remark": ""
             },
             {
               "label": "铂金→钻石",
-              "price": 65,
+              "price": 103,
               "remark": ""
             }
           ],
