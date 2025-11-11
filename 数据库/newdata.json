@@ -137,7 +137,7 @@
         {
           "id": "genshin-1",
           "title": "【普托】日常委托+每日体力",
-          "desc": "有130及以上历练点，则-30￥，找客服退钱qwq 可随意指定，一天清一次",
+          "desc": "可随意指定，一天清一次，有130及以上历练点减免30￥，或找客服退钱qwq",
           "priceOptions": [
             {
               "label": "月",
@@ -1224,7 +1224,7 @@
         {
           "id": "g1760353905502-1",
           "title": "哈弗币纯币",
-          "desc": "默认留小红、大红、金卡、红卡（不计入哈弗币，送老板）",
+          "desc": "默认留金卡、红卡，和50w以上的搜索物资（不计入哈弗币，送老板）",
           "priceOptions": [
             {
               "label": "1000万哈弗币",
@@ -1312,6 +1312,325 @@
       ]
     },
     {
+      "id": "g1760356466428",
+      "name": "无畏契约",
+      "tag": "哈哈哈！颗秒！邦邦邦邦邦！",
+      "needsSubset": true,
+      "subsets": [
+        {
+          "id": "ss1762849975512",
+          "name": "代肝项目",
+          "remark": "",
+          "announce": {
+            "text": "",
+            "style": {
+              "color": "#1f2937",
+              "bgColor": "#ffffff",
+              "fontSize": 14,
+              "bold": false
+            }
+          }
+        },
+        {
+          "id": "ss1762852205646-24067",
+          "name": "段位相关",
+          "remark": "段位代肝qwq",
+          "announce": {
+            "text": "钻石以上目前打不动qwq",
+            "style": {
+              "color": "#ffffff",
+              "bgColor": "#000000",
+              "fontSize": 14,
+              "bold": false
+            }
+          }
+        }
+      ],
+      "services": [
+        {
+          "id": "g1760356466428-1",
+          "title": "赛季通行证",
+          "desc": "",
+          "priceOptions": [
+            {
+              "label": "从0到所有",
+              "price": 0,
+              "remark": ""
+            },
+            {
+              "label": "1级",
+              "price": 12,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": ""
+          },
+          "subset": "代肝项目",
+          "subsetId": "ss1762849975512"
+        },
+        {
+          "id": "g1760356466428-2",
+          "title": "账号等级",
+          "desc": "",
+          "priceOptions": [
+            {
+              "label": "1级",
+              "price": 10,
+              "remark": "越多越便宜"
+            }
+          ],
+          "discount": {
+            "enabled": true,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": ""
+          },
+          "subset": "代肝项目",
+          "subsetId": "ss1762849975512"
+        },
+        {
+          "id": "g1760356466428-3",
+          "title": "大段",
+          "desc": "这里是整个大段",
+          "priceOptions": [
+            {
+              "label": "黑铁→青铜",
+              "price": 175,
+              "remark": ""
+            },
+            {
+              "label": "青铜→白银",
+              "price": 175,
+              "remark": ""
+            },
+            {
+              "label": "白银→黄金",
+              "price": 280,
+              "remark": ""
+            },
+            {
+              "label": "黄金→铂金",
+              "price": 300,
+              "remark": "开始困难了qwq"
+            },
+            {
+              "label": "铂金→钻石",
+              "price": 350,
+              "remark": "打不动了"
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": ""
+          },
+          "subset": "段位相关",
+          "subsetId": "ss1762852205646-24067"
+        },
+        {
+          "id": "g1760356466428-4",
+          "title": "小段",
+          "desc": "这里是小段",
+          "priceOptions": [
+            {
+              "label": "黑铁→青铜",
+              "price": 30,
+              "remark": ""
+            },
+            {
+              "label": "青铜→白银",
+              "price": 30,
+              "remark": ""
+            },
+            {
+              "label": "白银→黄金",
+              "price": 48,
+              "remark": ""
+            },
+            {
+              "label": "黄金→铂金",
+              "price": 52,
+              "remark": ""
+            },
+            {
+              "label": "铂金→钻石",
+              "price": 65,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": ""
+          },
+          "subset": "段位相关",
+          "subsetId": "ss1762852205646-24067"
+        }
+      ]
+    },
+    {
+      "id": "g1762850518558",
+      "name": "CS2",
+      "tag": "反恐精英",
+      "needsSubset": true,
+      "subsets": [
+        {
+          "id": "ss1762849975512",
+          "name": "代肝相关",
+          "remark": "",
+          "announce": {
+            "text": "测试中",
+            "style": {
+              "color": "#1f2937",
+              "bgColor": "#ffffff",
+              "fontSize": 14,
+              "bold": false
+            }
+          }
+        },
+        {
+          "id": "ss1762850235940-2164",
+          "name": "段位相关",
+          "remark": "",
+          "announce": {
+            "text": "",
+            "style": {
+              "color": "#1f2937",
+              "bgColor": "#ffffff",
+              "fontSize": 14,
+              "bold": false
+            }
+          }
+        }
+      ],
+      "services": [
+        {
+          "id": "g1762850518558-1",
+          "title": "每周箱子",
+          "desc": "每周一次的官方掉落武器箱",
+          "priceOptions": [
+            {
+              "label": "周",
+              "price": 15,
+              "remark": "如果不是0进度联系客服减价噢~"
+            },
+            {
+              "label": "月",
+              "price": 40,
+              "remark": "如果不是0进度联系客服减价噢~"
+            }
+          ],
+          "discount": {
+            "enabled": false,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": ""
+          },
+          "subset": "代肝相关",
+          "subsetId": "ss1762849975512"
+        },
+        {
+          "id": "g1762850518558-2",
+          "title": "武库通行证",
+          "desc": "通行证代肝",
+          "priceOptions": [
+            {
+              "label": "次",
+              "price": 4000,
+              "remark": "可根据进度适当减免"
+            }
+          ],
+          "discount": {
+            "enabled": true,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": ""
+          },
+          "subset": "代肝相关",
+          "subsetId": "ss1762849975512"
+        }
+      ]
+    },
+    {
+      "id": "g1760354490704",
+      "name": "鸣潮",
+      "tag": "开放世界",
+      "needsSubset": true,
+      "subsets": [
+        {
+          "id": "ss1760354373724",
+          "name": "委托相关",
+          "remark": ""
+        }
+      ],
+      "services": [
+        {
+          "id": "g1760354490704-1",
+          "title": "清体力",
+          "desc": "可指定打某个本",
+          "priceOptions": [
+            {
+              "label": "月",
+              "price": 58,
+              "remark": ""
+            }
+          ],
+          "discount": {
+            "enabled": true,
+            "type": "more"
+          },
+          "paymentMethods": [
+            "微信",
+            "支付宝"
+          ],
+          "contact": {
+            "type": "微信",
+            "value": "shikacyayuzu"
+          },
+          "subset": "委托相关",
+          "subsetId": "ss1760354373724"
+        }
+      ]
+    },
+    {
       "id": "g1760091190321",
       "name": "崩坏：星穹铁道",
       "tag": "不开放世界（",
@@ -1375,87 +1694,6 @@
           },
           "subset": "托管相关",
           "subsetId": "ss-g1760091190321"
-        }
-      ]
-    },
-    {
-      "id": "g1760354490704",
-      "name": "鸣潮",
-      "tag": "开放世界",
-      "needsSubset": true,
-      "subsets": [
-        {
-          "id": "ss1760354373724",
-          "name": "委托相关",
-          "remark": ""
-        }
-      ],
-      "services": [
-        {
-          "id": "g1760354490704-1",
-          "title": "清体力",
-          "desc": "可指定打某个本",
-          "priceOptions": [
-            {
-              "label": "月",
-              "price": 58,
-              "remark": ""
-            }
-          ],
-          "discount": {
-            "enabled": true,
-            "type": "more"
-          },
-          "paymentMethods": [
-            "微信",
-            "支付宝"
-          ],
-          "contact": {
-            "type": "微信",
-            "value": "shikacyayuzu"
-          },
-          "subset": "委托相关",
-          "subsetId": "ss1760354373724"
-        }
-      ]
-    },
-    {
-      "id": "g1760356466428",
-      "name": "无畏契约",
-      "tag": "哈哈哈！颗秒！邦邦邦邦邦！",
-      "needsSubset": false,
-      "subsets": [
-        {
-          "id": "ss1760356455976",
-          "name": "代肝项目",
-          "remark": ""
-        }
-      ],
-      "services": [
-        {
-          "id": "g1760356466428-1",
-          "title": "赛季通行证",
-          "desc": "",
-          "priceOptions": [
-            {
-              "label": "单次",
-              "price": 0,
-              "remark": ""
-            }
-          ],
-          "discount": {
-            "enabled": false,
-            "type": "more"
-          },
-          "paymentMethods": [
-            "微信"
-          ],
-          "contact": {
-            "type": "微信",
-            "value": ""
-          },
-          "subset": "代肝项目",
-          "subsetId": null
         }
       ]
     },
@@ -1549,7 +1787,7 @@
       "services": []
     }
   ],
-  "theme": "lime",
+  "theme": "pink",
   "discountConfig": {
     "more": {
       "p2": 0.08,
@@ -1622,5 +1860,18 @@
       }
     }
   },
-  "priceCardStyle": {}
+  "priceCardStyle": {
+    "minWidth": 200,
+    "padding": 12,
+    "radius": 12,
+    "rowGap": 6,
+    "colGap": 16,
+    "borderWidth": 2,
+    "borderColor": "#cbd5e1",
+    "shadowX": 5,
+    "shadowY": 5,
+    "shadowBlur": 4,
+    "shadowSpread": -2,
+    "shadowAlpha": 67
+  }
 }
