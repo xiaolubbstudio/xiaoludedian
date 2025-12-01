@@ -1505,7 +1505,7 @@
           "name": "代肝相关",
           "remark": "",
           "announce": {
-            "text": "测试中",
+            "text": "",
             "style": {
               "color": "#1f2937",
               "bgColor": "#ffffff",
@@ -1563,17 +1563,32 @@
         },
         {
           "id": "g1762850518558-2",
-          "title": "武库通行证",
+          "title": "武库星星",
           "desc": "通行证代肝",
           "priceOptions": [
             {
-              "label": "次",
-              "price": 4000,
-              "remark": "可根据进度适当减免"
+              "label": "1星",
+              "price": 23,
+              "remark": ""
+            },
+            {
+              "label": "0→40星",
+              "price": 880,
+              "remark": "比1颗星单买划算噢~"
+            },
+            {
+              "label": "补全1星",
+              "price": 23,
+              "remark": "具体按照最低的一套通行证计算。\n第一套：10颗星\n第二套：30颗星\n第三套：40颗星\n补全：按照最低的第一套10颗星，打到40一共30颗星，一颗星23，总价23*30=690￥"
+            },
+            {
+              "label": "10星",
+              "price": 220,
+              "remark": "比1颗星单买划算噢~"
             }
           ],
           "discount": {
-            "enabled": true,
+            "enabled": false,
             "type": "more"
           },
           "paymentMethods": [
@@ -1787,7 +1802,7 @@
       "services": []
     }
   ],
-  "theme": "pink",
+  "theme": "white",
   "discountConfig": {
     "more": {
       "p2": 0.08,
